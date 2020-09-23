@@ -22,6 +22,5 @@ There can be two dogs in each cage. A dog can be eitheir passive or aggressive.
 If the dog is passive, it can be clubed with another passive dog.
 If the dog is aggressive, it has to be alone in a cage.
 The program must print the number ways W to put the N dogs in the cages as the output.
-
 Note: The number of cages in the pet store is sufficient to keep N dogs according to the given condition.
 */
