@@ -30,3 +30,26 @@ cout <<abs(k-maxSum(arr,0,n,b));
 return 0; 
 }
 //10 9 -3
+//iterative method
+#include <bits/stdc++.h>
+using namespace std;
+
+int Max_Sum(int arr[], int K, int N)
+{
+	int dp[N + 1];
+	memset(dp, 0, sizeof(dp));
+	for(int i = 1; i < K ; i++)
+		dp[i] = dp[i-1]+arr[i-1];
+	for(int i = K ; i <= N; ++i)
+	{int t=0;
+	 for(int j = i; j >= (i - K + 1); j--){
+	 t+=arr[j-1];
+	 dp[i] = max(dp[i], dp[j-1]+t-arr[j-1]);}}
+	return dp[N];}
+int main()
+{int arr[] = { 4, 12, 22, 18, 34, 12, 25 };
+int N = sizeof(arr) / sizeof(int);
+int K = 5;
+cout << Max_Sum(arr, K, N);
+return 0;
+}
