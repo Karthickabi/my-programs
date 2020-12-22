@@ -66,6 +66,4 @@ int main(){
             tempx=m(x1,xc);
         }
         c++;
-    }
-    printf("%d",c);
-}
+    }printf("%d",c);}
