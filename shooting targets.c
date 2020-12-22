@@ -55,12 +55,15 @@ int main(){
             tempx->c=0;
             r(y1,tempx->xy,p,0,yc,n);
             tempx=m(x1,xc);
+            tempy=m(y1,yc);
+            
         }
         else{
             t+=tempy->c;
             tempy->c=0;
             r(x1,tempy->xy,p,1,xc,n);
             tempy=m(y1,yc);
+            tempx=m(x1,xc);
         }
         c++;
     }
