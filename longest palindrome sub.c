@@ -11,7 +11,7 @@ k[l++]=a[i];}k[l++]='#';k[l]='\0';
 for(int i = 1; i < l-1; i++)
 {int m = c - (i - c);        
 if(r>i)           
-P[i]=r-i<P[m]?r-1:P[m];                  
+P[i]=r-i<P[m]?r-i:P[m];                  
 while (k[i + 1 + P[i]] == k[i - 1 - P[i]])
 P[i]++;                
 if (i + P[i] > r) 
