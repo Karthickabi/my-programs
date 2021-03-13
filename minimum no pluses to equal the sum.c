@@ -11,7 +11,7 @@ int n=0,l=strlen(a)-1,s;
 while(a[l]!='=')
 {l--;n++;}
 s=atoi(a+l+1);
-int dp[l+1][s];
+int dp[l+1][s+1];
 for(int i=0;i<l;i++)
 dp[i][0]=0;
 for(int i=0;i<l;i++)
