@@ -1,11 +1,9 @@
 #include<math.h>
 #include <stdio.h>
 long long int f(long long int a)
-{return a*(a==1?1:f(a-1));}
+{return a*(a<1?1:f(a-1));}
 long long int c(long long int a,long long int b)
-{ if(a==b)
-return 1;
-  return f(a)/(f(a-b)*f(b));}
+{ return f(a)/(f(a-b)*f(b));}
 int main()
 {long long int a,b,k=1,n,s;
 scanf("%lld%lld",&a,&b);
