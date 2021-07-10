@@ -1,7 +1,7 @@
 #include<math.h>
 #include <stdio.h>
 long long int f(long long int a)
-{return a*(a<1?1:f(a-1));}
+{return a<1?1:a*f(a-1);}
 long long int c(long long int a,long long int b)
 { return f(a)/(f(a-b)*f(b));}
 int main()
