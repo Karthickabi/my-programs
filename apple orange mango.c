@@ -37,3 +37,16 @@ for(int i=0;i<n;i++)
 printf("%d ",a[i][2]);
 printf("\n%d",a[n-1][0]+a[n-1][1]+a[n-1][2]);
 }
+
+//easiest method
+#include <stdio.h>
+int main()
+{long long int k,n,p,a=1;
+scanf("%lld%lld",&n,&k);
+p=k==1;
+for(int i=1;i<=n;i++)
+{a=(a<<1)+p;
+p=(i+1)%k?0:a;
+}
+printf("%lld",a);
+}
