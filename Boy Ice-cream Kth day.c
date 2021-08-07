@@ -42,3 +42,17 @@ a[i][1]+=a[i-1][1];
 }
 printf("%ld",a[n-1][0]+a[n-1][1]);
 }
+
+//easier method
+#include<stdio.h>
+void main()
+{int n,k;
+scanf("%d%d",&n,&k);
+long int ans=1,p=1;
+for(int i=1;i<n;i++)
+{int t=ans;
+ans+=p;
+p=(i+1)%k?t:ans;
+}
+printf("%ld ",ans+p);
+}
