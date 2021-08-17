@@ -42,6 +42,7 @@ int main()
     for(int i=1;i<=n;i++)
     {
         scanf("%d",&a[i]);
+        //a[i]=n-a[i]+1; if desc
         c[i]=0;
     }
     for(int i=1;i<=n;i++)
