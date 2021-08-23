@@ -118,3 +118,38 @@ int main() {
  
     return 0;
 }
+/*
+#include<stdio.h>
+#include<stdlib.h>
+int dp[1000][1000];
+int v(int *a,int s,int e,int n,int year)
+{
+    if(dp[s][e]!=-1)
+    return dp[s][e];
+    if(s==e)
+    return a[s]*year;
+    int x=a[s]*year+v(a,s+1,e,n,year+1);
+    int y=a[e]*year+v(a,s,e-1,n,year+1);
+    int ans=x<y?y:x;
+    dp[s][e]=ans;
+    return ans;
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            dp[i][j]=-1;
+        }
+    }
+    printf("%d",v(a,0,n-1,n,1));
+}
+*/
