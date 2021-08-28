@@ -73,7 +73,7 @@ int main()
             dp[b[i][1]]=dp[b[i][0]]+b[i][2];
         }
     }
-    for(int i=2;i<n&&f;i++)
+    for(int i=2;i<a&&f;i++)
     {
         f=0;
         for(int j=0;j<n;j++)
