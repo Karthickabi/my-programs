@@ -110,3 +110,80 @@ h(t[k-1],t[k-2],a,0);
 for(int j=0;j<r;j++)
 printf("%c,%c,%c\n",a[j][0],'A'+j,a[j][1]);
 printf("\n");}
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        String []a=sc.nextLine().split(",");
+        int n=Integer.parseInt(a[0].trim());
+        int k=Integer.parseInt(a[1].trim());
+        String names="ABCDEFGHIJKLMNOPQRSTUVWXYZ".substring(0,n);
+        List<String> photo=new ArrayList<>();
+        for(int i=0;i<k;i++)
+        {
+            photo.add(sc.nextLine().trim().replaceAll(",",""));
+        }
+        boolean miss=false;
+        for(Character name:names.toCharArray())
+        {
+            int relCount=0;
+            Queue<Character> queue=new ArrayDeque<>();
+            List<Character> visit=new ArrayList<>();
+            queue.add(name);
+            visit.add(name);
+            while(!queue.isEmpty())
+            {
+                Character student=queue.poll();
+                for(String seq:photo)
+                {
+                    if(seq.contains(student.toString()))
+                    {
+                        String succ=seq.substring(seq.indexOf(student));
+                        for(Character succstud:succ.toCharArray())
+                        {
+                            if(!visit.contains(succstud))
+                            {
+                                queue.add(succstud);
+                                visit.add(succstud);
+                                relCount++;
+                            }
+                        }
+                    }
+                }
+            }
+            queue.add(name);
+            while(!queue.isEmpty())            
+            {                
+                Character student=queue.poll();                
+                for(String seq:photo)                
+                {                    
+                    if(seq.contains(student.toString()))                    
+                    {                        
+                        String pred=seq.substring(0,seq.indexOf(student));
+                        for(Character predstud:pred.toCharArray()) 
+                        {                            
+                            if(!visit.contains(predstud))                   
+                            {                                
+                                queue.add(predstud);                    
+                                visit.add(predstud);                
+                                relCount++;
+                            }                        
+                        }                    
+                    }                
+                }            
+            }
+            if(relCount!=n-1)
+            {
+                System.out.print(name+" ");
+                miss=true;
+            }
+        }
+        if(!miss)
+        {
+            System.out.print("N/A");
+        }
+	}
+}
